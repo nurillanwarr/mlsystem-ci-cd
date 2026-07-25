@@ -7,7 +7,6 @@ import mlflow
 import mlflow.sklearn
 
 if __name__ == '__main__':
-    mlflow.set_experiment('Breast Cancer Classification')
 
     with mlflow.start_run():
         data = load_breast_cancer()
