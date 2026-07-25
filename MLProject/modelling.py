@@ -1,3 +1,6 @@
+import os
+os.environ["MLFLOW_ALLOW_FILE_STORE"] = "true"
+
 import pandas as pd
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
@@ -7,9 +10,6 @@ import mlflow
 import mlflow.sklearn
 
 if __name__ == "__main__":
-    import os
-
-    os.environ["MLFLOW_ALLOW_FILE_STORE"] = "true"
     with mlflow.start_run():
         data = load_breast_cancer()
         df = pd.DataFrame(data.data, columns=data.feature_names)
