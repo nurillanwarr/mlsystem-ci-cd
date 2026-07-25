@@ -21,7 +21,7 @@ jobs:
         run: make test
       - name: Run MLflow Project
         env:
-          MLFLOW_ALLOW_FILE_STORE: "true"
+          MLFLOW_TRACKING_URI: "sqlite:///mlruns.db"
         run: |
           pip install -r requirements.txt
           mlflow run MLProject --env-manager=local
@@ -29,5 +29,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mlflow-artifacts
-          path: mlruns/
+          path: |
+            mlruns/
+            mlruns.db
         if: always()
