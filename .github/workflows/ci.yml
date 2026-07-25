@@ -3,6 +3,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      MLFLOW_ALLOW_FILE_STORE: "true"
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -27,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mlflow-artifacts
-          path: MLProject/mlruns/
+          path: mlruns/
         if: always()
