@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Kampus/Lomba/Pidi/Latihan/Membangun%20Sistem%20Machine%20Learning/Workflow-CI/mlruns/0/c34fc3edfe24472888f5b2f9a5cca160/artifacts
+end_time: 1784837444854
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c34fc3edfe24472888f5b2f9a5cca160
+run_name: gentle-moose-570
+run_uuid: c34fc3edfe24472888f5b2f9a5cca160
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784837361229
+status: 4
+tags: []
+user_id: Lenovo

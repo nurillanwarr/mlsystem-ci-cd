@@ -1,4 +1,4 @@
-name: CI Workflow
+name: ci.yml
 on: [push]
 jobs:
   build:
@@ -8,9 +8,21 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12.7'
-      - name: Install, Format, Lint, and Test
-        run: make all
+          python-version: '3.12'
+      - name: Install dependencies
+        run: make install
+      - name: Format code
+        run: make format
+      - name: Lint code
+        run: make lint
+      - name: Run tests
+        run: make test
       - name: Run MLflow Project
-        run: mlflow run MLProject --env-manager=local
-
+        run: |
+          cd MLProject && pip install -r ../requirements.txt && python modelling.py
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlflow-artifacts
+          path: MLProject/mlruns/
+        if: always()

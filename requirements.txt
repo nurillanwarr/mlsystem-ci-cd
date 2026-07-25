@@ -1,6 +1,6 @@
 black
 pylint
 pytest
-mlflow==2.19.0
+mlflow
 pandas
 scikit-learn

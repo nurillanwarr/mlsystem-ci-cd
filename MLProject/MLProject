@@ -1,4 +1,4 @@
-name: Latihan_Credit_Scoring
+name: Breast_Cancer_Classification
 conda_env: conda.yaml
 entry_points:
   main:

@@ -1,8 +1,24 @@
-import pandas as pd
-from sklearn.datasets import make_classification
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
 
-def test_data_generation():
-    """Simple test to verify we can generate synthetic data for testing."""
-    X, y = make_classification(n_samples=10, n_features=4, random_state=42)
-    assert X.shape == (10, 4)
-    assert y.shape == (10,)
+
+def test_model_training():
+    """Test that the model can be trained and achieves reasonable accuracy."""
+    data = load_breast_cancer()
+    X_train, X_test, y_train, y_test = train_test_split(
+        data.data, data.target, test_size=0.2, random_state=42
+    )
+    model = RandomForestClassifier(n_estimators=10, random_state=42)
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    acc = accuracy_score(y_test, preds)
+    assert acc > 0.8, f"Model accuracy {acc} is below threshold"
+
+
+def test_data_shape():
+    """Test that the breast cancer dataset has expected shape."""
+    data = load_breast_cancer()
+    assert data.data.shape[1] == 30
+    assert len(data.target) == 569

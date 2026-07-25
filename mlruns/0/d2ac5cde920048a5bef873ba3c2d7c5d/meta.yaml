@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Kampus/Lomba/Pidi/Latihan/Membangun%20Sistem%20Machine%20Learning/Workflow-CI/mlruns/0/d2ac5cde920048a5bef873ba3c2d7c5d/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d2ac5cde920048a5bef873ba3c2d7c5d
+run_name: thoughtful-ape-169
+run_uuid: d2ac5cde920048a5bef873ba3c2d7c5d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784837322118
+status: 1
+tags: []
+user_id: Lenovo
