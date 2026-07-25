@@ -19,7 +19,7 @@ jobs:
         run: make test
       - name: Run MLflow Project
         run: |
-          cd MLProject && pip install -r ../requirements.txt && python modelling.py
+          pip install -r requirements.txt mlflow run MLProject --env-manager=local
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
